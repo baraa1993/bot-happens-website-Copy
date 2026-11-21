@@ -1,2 +1,21 @@
-const menu=document.querySelector(".menu"),nav=document.querySelector("nav");if(menu&&nav){menu.addEventListener("click",()=>{nav.classList.toggle("open");menu.setAttribute("aria-expanded",nav.classList.contains("open")?"true":"false")});nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>nav.classList.remove("open")))}document.querySelectorAll("[data-year]").forEach(e=>e.textContent=new Date().getFullYear());
-const form=document.querySelector("#inquiry-form");if(form){form.addEventListener("submit",e=>{e.preventDefault();const status=document.querySelector("#form-status");status.textContent="The inquiry form is not connected yet. Please use the business contact method once it has been configured. Your information has not been sent.";status.hidden=false;});}
+
+const menu = document.querySelector(".menu");
+const nav = document.querySelector("nav");
+
+if (menu && nav) {
+  menu.addEventListener("click", () => {
+    nav.classList.toggle("open");
+    menu.setAttribute(
+      "aria-expanded",
+      nav.classList.contains("open") ? "true" : "false"
+    );
+  });
+
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => nav.classList.remove("open"));
+  });
+}
+
+document.querySelectorAll("[data-year]").forEach((element) => {
+  element.textContent = new Date().getFullYear();
+});
